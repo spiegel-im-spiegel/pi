@@ -1,16 +1,12 @@
 package main
 
 import (
-	"fmt"
-	"math/rand"
-	"time"
+	"os"
 
-	"github.com/spiegel-im-spiegel/pi/gencmplx"
+	"github.com/spiegel-im-spiegel/pi/cmd"
 )
 
 func main() {
-	c := gencmplx.New(rand.NewSource(time.Now().UnixNano()), int64(10000))
-	for p := range c {
-		fmt.Printf("%v\t%v\n", real(p), imag(p))
-	}
+	cmd.Execute()
+	os.Exit(cmd.ExitCode)
 }

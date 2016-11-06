@@ -12,5 +12,6 @@ func New(s rand.Source, count int64) <-chan complex128 {
 		}
 		close(ch)
 	}(r, count)
+
 	return ch
 }

@@ -1,0 +1,5 @@
+package: github.com/spiegel-im-spiegel/pi
+import:
+- package: github.com/spiegel-im-spiegel/gocli
+- package: github.com/spf13/cobra
+- package: github.com/spf13/viper
