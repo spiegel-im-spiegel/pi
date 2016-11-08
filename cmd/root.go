@@ -10,7 +10,9 @@ import (
 
 // Flags
 var (
-	ExitCode int
+	ExitCode   int
+	pointCount int64
+	estmtCount int64
 
 	cfgFile string
 )
