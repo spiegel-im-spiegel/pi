@@ -22,7 +22,7 @@ func NewContext(w, e io.Writer, pc, ec int64, hc float64) *Context {
 	return &Context{ui: gocli.NewUI(nil, w, e), pointCount: pc, estimateCount: ec, histClass: hc}
 }
 
-//Execute returns list of points.
+//Execute returns estimate of Pi.
 func Execute(cxt *Context) error {
 	if cxt.pointCount <= 0 {
 		return fmt.Errorf("invalid argument \"%v\" for pcount option", cxt.pointCount)
@@ -48,23 +48,22 @@ func Execute(cxt *Context) error {
 		sum += pi
 		sum2 += pi * pi
 	}
-	cxt.ui.OutputErrln(fmt.Sprintf("min: %v", min))
-	cxt.ui.OutputErrln(fmt.Sprintf("max: %v", max))
+	cxt.ui.OutputErrln(fmt.Sprintf("minimum value: %7.5f", min))
+	cxt.ui.OutputErrln(fmt.Sprintf("maximum value: %7.5f", max))
 	ave := sum / float64(cxt.estimateCount)
-	cxt.ui.OutputErrln(fmt.Sprintf("ave: %v", ave))
+	cxt.ui.OutputErrln(fmt.Sprintf("average value: %7.5f", ave))
 	vari := sum2/float64(cxt.estimateCount) - ave*ave
-	cxt.ui.OutputErrln(fmt.Sprintf("dev: %v", math.Sqrt(vari)))
+	cxt.ui.OutputErrln(fmt.Sprintf("standard deviation: %7.5f", math.Sqrt(vari)))
 
 	if cxt.histClass <= 0.0 {
 		for _, pi := range pis {
-			cxt.ui.Outputln(fmt.Sprintf("%v", pi))
+			cxt.ui.Outputln(fmt.Sprintf("%7.5f", pi))
 		}
 		return nil
 	}
 
 	classCount := int((max-min)/cxt.histClass) + 1
 	freqs := make([]int, classCount)
-	cxt.ui.OutputErrln(fmt.Sprintf("num: %v", classCount))
 	for _, pi := range pis {
 		class := 0
 		for i := 0; i < classCount; i++ {
@@ -78,7 +77,7 @@ func Execute(cxt *Context) error {
 	}
 	for i, freq := range freqs {
 		mid := min + cxt.histClass*float64(i) + cxt.histClass/2.0
-		cxt.ui.Outputln(fmt.Sprintf("%v\t%v", mid, freq))
+		cxt.ui.Outputln(fmt.Sprintf("%7.5f\t%v", mid, freq))
 	}
 
 	return nil
