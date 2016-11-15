@@ -2,10 +2,11 @@
 
 - [モンテカルロ法による円周率の推定（その1） — プログラミング言語 Go | text.Baldanders.info](http://text.baldanders.info/golang/estimate-of-pi/)
 - [モンテカルロ法による円周率の推定（その2 CLI） — プログラミング言語 Go | text.Baldanders.info](http://text.baldanders.info/golang/estimate-of-pi-2-cli/)
+- [モンテカルロ法による円周率の推定（その3 Gaussian）](http://text.baldanders.info/golang/estimate-of-pi-3-gaussian/) 
 
 ## ライセンス
 
-このリポジトリのソースコードは [CC0](http://creativecommons.org/publicdomain/zero/1.0/) で提供しています。
-なお，ソースコード内で参照している各パッケージのライセンスについては，それぞれのリポジトリ等を参照してください。
+このリポジトリのソースコードの殆んどは [CC0](http://creativecommons.org/publicdomain/zero/1.0/) で提供していますが，一部については GNU GPL version 3 になっています。
+詳しくはソースコードを参照してください。
 
-[![CC0](http://i.creativecommons.org/p/zero/1.0/88x31.png "CC0")](http://creativecommons.org/publicdomain/zero/1.0/)
+パッケージ全体としては GPL での取り扱いでお願いします。

@@ -1,3 +1,7 @@
+/**
+ * These codes are licensed under CC0.
+ * http://creativecommons.org/publicdomain/zero/1.0/
+ */
 package cmd
 
 import (
@@ -23,5 +27,4 @@ var plotCmd = &cobra.Command{
 
 func init() {
 	RootCmd.AddCommand(plotCmd)
-	plotCmd.PersistentFlags().Int64VarP(&pointCount, "pcount", "p", 10000, "Count of points")
 }

@@ -1,3 +1,7 @@
+/**
+ * These codes are licensed under CC0.
+ * http://creativecommons.org/publicdomain/zero/1.0/
+ */
 package plot
 
 import (
@@ -21,7 +25,7 @@ func NewContext(w, e io.Writer, ct int64) *Context {
 	return &Context{ui: gocli.NewUI(nil, w, e), pointCount: ct}
 }
 
-//Execute returns list of points.
+//Execute output list of points.
 func Execute(cxt *Context) error {
 	if cxt.pointCount <= 0 {
 		return fmt.Errorf("invalid argument \"%v\" for pcount option", cxt.pointCount)

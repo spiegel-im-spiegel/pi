@@ -1,3 +1,7 @@
+/**
+ * These codes are licensed under CC0.
+ * http://creativecommons.org/publicdomain/zero/1.0/
+ */
 package cmd
 
 import (
@@ -14,7 +18,7 @@ var estmtCmd = &cobra.Command{
 	Short: "Estimate of Pi",
 	Long:  "Estimate of Pi with Monte Carlo method.",
 	Run: func(cmd *cobra.Command, args []string) {
-		if err := estmt.Execute(estmt.NewContext(cmd.OutOrStdout(), os.Stderr, pointCount, estmtCount)); err != nil {
+		if err := estmt.Execute(estmt.NewContext(cmd.OutOrStdout(), os.Stderr, pointCount, estmtCount, qqFlag)); err != nil {
 			fmt.Fprintln(os.Stderr, err)
 			ExitCode = 1
 		}
@@ -23,6 +27,6 @@ var estmtCmd = &cobra.Command{
 
 func init() {
 	RootCmd.AddCommand(estmtCmd)
-	estmtCmd.PersistentFlags().Int64VarP(&pointCount, "pcount", "p", 10000, "Count of points")
 	estmtCmd.PersistentFlags().Int64VarP(&estmtCount, "ecount", "e", 100, "Count of estimate")
+	estmtCmd.PersistentFlags().BoolVarP(&qqFlag, "qqplot", "q", false, "Output Q-Q plot data")
 }
