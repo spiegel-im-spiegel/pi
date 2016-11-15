@@ -23,6 +23,8 @@ var qqCmd = &cobra.Command{
 			file, err := os.Open(args[0])
 			if err != nil {
 				fmt.Fprintln(os.Stderr, err)
+				ExitCode = 1
+				return
 			}
 			defer file.Close()
 			inp = file
