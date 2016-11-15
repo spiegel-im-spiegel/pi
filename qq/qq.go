@@ -26,7 +26,7 @@ func NewContext(r io.Reader, w, e io.Writer) *Context {
 	return &Context{ui: gocli.NewUI(r, w, e)}
 }
 
-//Execute output list of estimate data.
+//Execute output Q-Q plot data.
 func Execute(cxt *Context) error {
 	scanner := bufio.NewScanner(cxt.ui.Reader())
 	pis := make([]float64, 0)
@@ -41,18 +41,9 @@ func Execute(cxt *Context) error {
 	ecf := float64(ec)
 
 	sort.Float64s(pis)
-	//rank := make([]float64, 0, cxt.estimateCount)
-	ppnds := make([]float64, 0, ec)
-	for i, _ := range pis {
-		r := (float64(i+1) - 0.5) / ecf
-		//rank = append(rank, r)
-		ppnds = append(ppnds, qnorm(r))
-	}
-
-	//output
 	for i, pi := range pis {
-		//cxt.ui.Outputln(fmt.Sprintf("%v\t%v\t%v", pi, rank[i], ppnds[i]))
-		cxt.ui.Outputln(fmt.Sprintf("%v\t%v", ppnds[i], pi))
+		rank := (float64(i+1) - 0.5) / ecf
+		cxt.ui.Outputln(fmt.Sprintf("%v\t%v", qnorm(rank), pi))
 	}
 
 	return nil
