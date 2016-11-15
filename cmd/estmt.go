@@ -18,7 +18,7 @@ var estmtCmd = &cobra.Command{
 	Short: "Estimate of Pi",
 	Long:  "Estimate of Pi with Monte Carlo method.",
 	Run: func(cmd *cobra.Command, args []string) {
-		if err := estmt.Execute(estmt.NewContext(cmd.OutOrStdout(), os.Stderr, pointCount, estmtCount, qqFlag)); err != nil {
+		if err := estmt.Execute(estmt.NewContext(cmd.OutOrStdout(), os.Stderr, pointCount, estmtCount)); err != nil {
 			fmt.Fprintln(os.Stderr, err)
 			ExitCode = 1
 		}
@@ -28,5 +28,4 @@ var estmtCmd = &cobra.Command{
 func init() {
 	RootCmd.AddCommand(estmtCmd)
 	estmtCmd.PersistentFlags().Int64VarP(&estmtCount, "ecount", "e", 100, "Count of estimate")
-	estmtCmd.PersistentFlags().BoolVarP(&qqFlag, "qqplot", "q", false, "Output Q-Q plot data")
 }

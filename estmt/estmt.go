@@ -18,12 +18,11 @@ type Context struct {
 	ui            *gocli.UI
 	pointCount    int64
 	estimateCount int64
-	qqFlag        bool
 }
 
 //NewContext returns Context instance
-func NewContext(w, e io.Writer, pc, ec int64, qq bool) *Context {
-	return &Context{ui: gocli.NewUI(nil, w, e), pointCount: pc, estimateCount: ec, qqFlag: qq}
+func NewContext(w, e io.Writer, pc, ec int64) *Context {
+	return &Context{ui: gocli.NewUI(nil, w, e), pointCount: pc, estimateCount: ec}
 }
 
 //Execute output list of estimate data.

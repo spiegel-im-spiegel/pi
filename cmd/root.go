@@ -16,7 +16,6 @@ var (
 	ExitCode   int
 	pointCount int64
 	estmtCount int64
-	qqFlag     bool
 )
 
 // RootCmd represents the base command when called without any subcommands
