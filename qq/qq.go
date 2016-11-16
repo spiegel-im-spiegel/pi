@@ -2,6 +2,7 @@
  * These codes are licensed under CC0 (exclude qnorm function).
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
+
 package qq
 
 import (
@@ -37,8 +38,7 @@ func Execute(cxt *Context) error {
 		}
 		pis = append(pis, pi)
 	}
-	ec := len(pis)
-	ecf := float64(ec)
+	ecf := float64(len(pis))
 
 	sort.Float64s(pis)
 	for i, pi := range pis {

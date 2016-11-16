@@ -1,12 +1,12 @@
 hash: b40d3d815f9b3a72e1a01509733c7d8d3148a8ca46e3e759ee6d5ad0df327b37
-updated: 2016-11-15T18:53:32.6615645+09:00
+updated: 2016-11-16T10:33:22.2732482+09:00
 imports:
 - name: github.com/inconshreveable/mousetrap
   version: 76626ae9c91c4f2a10f34cad8ce83ea42c93bb75
 - name: github.com/pkg/errors
   version: 248dadf4e9068a0b3e79f02ed0a610d935de5302
 - name: github.com/spf13/cobra
-  version: 6e91dded25d73176bf7f60b40dd7aa1f0bf9be8d
+  version: 6b74a60562f5c1c920299b8f02d153e16f4897fc
 - name: github.com/spf13/pflag
   version: 5ccb023bc27df288a957c5e994cd44fd19619465
 - name: github.com/spiegel-im-spiegel/gocli
