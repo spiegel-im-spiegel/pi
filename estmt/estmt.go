@@ -10,19 +10,21 @@ import (
 	"math"
 
 	"github.com/spiegel-im-spiegel/gocli"
+	"github.com/spiegel-im-spiegel/pi/gencmplx"
 	"github.com/spiegel-im-spiegel/pi/genpi"
 )
 
 //Context is context for estmt package.
 type Context struct {
 	ui            *gocli.UI
+	rngType       gencmplx.RNGs
 	pointCount    int64
 	estimateCount int64
 }
 
 //NewContext returns Context instance
-func NewContext(w, e io.Writer, pc, ec int64) *Context {
-	return &Context{ui: gocli.NewUI(nil, w, e), pointCount: pc, estimateCount: ec}
+func NewContext(w, e io.Writer, rng gencmplx.RNGs, pc, ec int64) *Context {
+	return &Context{ui: gocli.NewUI(nil, w, e), rngType: rng, pointCount: pc, estimateCount: ec}
 }
 
 //Execute output list of estimate data.
@@ -36,7 +38,7 @@ func Execute(cxt *Context) error {
 	ecf := float64(cxt.estimateCount)
 
 	//measurement
-	ch := genpi.New(cxt.pointCount, cxt.estimateCount)
+	ch := genpi.New(cxt.pointCount, cxt.estimateCount, cxt.rngType)
 	min := float64(10)
 	max := float64(0)
 	sum := float64(0)

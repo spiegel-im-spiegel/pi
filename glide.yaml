@@ -3,3 +3,6 @@ import:
 - package: github.com/spiegel-im-spiegel/gocli
 - package: github.com/spf13/cobra
 - package: github.com/pkg/errors
+- package: github.com/seehuhn/mt19937
+- package: github.com/davidminor/gorand
+- package: github.com/davidminor/uint128
