@@ -2,6 +2,7 @@
  * These codes are licensed under CC0.
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
+
 package estmt
 
 import (
@@ -36,6 +37,16 @@ func Execute(cxt *Context) error {
 		return fmt.Errorf("invalid argument \"%v\" for ecount option", cxt.estimateCount)
 	}
 	ecf := float64(cxt.estimateCount)
+
+	rng := "default"
+	switch cxt.rngType {
+	case gencmplx.LCG:
+		rng = "LCG"
+	case gencmplx.MT:
+		rng = "MT"
+	default:
+	}
+	cxt.ui.OutputErrln(fmt.Sprintf("random number generator: %s", rng))
 
 	//measurement
 	ch := genpi.New(cxt.pointCount, cxt.estimateCount, cxt.rngType)

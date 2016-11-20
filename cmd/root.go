@@ -2,6 +2,7 @@
  * These codes are licensed under CC0.
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
+
 package cmd
 
 import (
@@ -39,7 +40,7 @@ func Execute() {
 func init() {
 	ExitCode = 0
 	RootCmd.PersistentFlags().Int64VarP(&pointCount, "pcount", "p", 10000, "Count of points")
-	RootCmd.PersistentFlags().StringVarP(&rngType, "rsource", "r", "GO", "Source of RNG (GO/LNG/MT)")
+	RootCmd.PersistentFlags().StringVarP(&rngType, "rsource", "r", "GO", "Source of RNG (GO/LCG/MT)")
 }
 
 //RngType returns kind of RNG
