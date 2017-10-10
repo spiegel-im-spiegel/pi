@@ -2,7 +2,8 @@
 
 - [モンテカルロ法による円周率の推定（その1） — プログラミング言語 Go | text.Baldanders.info](http://text.baldanders.info/golang/estimate-of-pi/)
 - [モンテカルロ法による円周率の推定（その2 CLI） — プログラミング言語 Go | text.Baldanders.info](http://text.baldanders.info/golang/estimate-of-pi-2-cli/)
-- [モンテカルロ法による円周率の推定（その3 Gaussian） — プログラミング言語 Go | text.Baldanders.info](http://text.baldanders.info/golang/estimate-of-pi-3-gaussian/) 
+- [モンテカルロ法による円周率の推定（その3 Gaussian） — プログラミング言語 Go | text.Baldanders.info](http://text.baldanders.info/golang/estimate-of-pi-3-gaussian/)
+- [モンテカルロ法による円周率の推定（その4 PRNG） — プログラミング言語 Go | text.Baldanders.info](http://text.baldanders.info/golang/estimate-of-pi-4-prng/)
 
 ## ライセンス
 
