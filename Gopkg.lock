@@ -2,9 +2,10 @@
 
 
 [[projects]]
+  branch = "master"
   name = "github.com/davidminor/gorand"
   packages = ["lcg"]
-  revision = "189780b8053a44a111339a4248394fd844c1da40"
+  revision = "283446f2caf531f8b71b3a766b6d5a4b198825f7"
 
 [[projects]]
   branch = "master"
@@ -21,7 +22,8 @@
 [[projects]]
   name = "github.com/pkg/errors"
   packages = ["."]
-  revision = "248dadf4e9068a0b3e79f02ed0a610d935de5302"
+  revision = "645ef00459ed84a119197bfb8d8205042c6df63d"
+  version = "v0.8.0"
 
 [[projects]]
   branch = "master"
@@ -32,7 +34,8 @@
 [[projects]]
   name = "github.com/spf13/cobra"
   packages = ["."]
-  revision = "6b74a60562f5c1c920299b8f02d153e16f4897fc"
+  revision = "7b2c5ac9fc04fc5efafb60700713d4fa609b777b"
+  version = "v0.0.1"
 
 [[projects]]
   name = "github.com/spf13/pflag"
@@ -48,6 +51,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "52c0f6877cbf4110b9278c7dcdd66c13bfe668626a4f4a6914d4f66739347063"
+  inputs-digest = "f14956441ca1817476a51ca71db0caffabb0a3c91462754dfa4207a0bfc7a1f3"
   solver-name = "gps-cdcl"
   solver-version = 1
